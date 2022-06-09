@@ -1,0 +1,100 @@
+/* --global-- */
+body, html {
+  margin: 0;
+  padding:0;
+}
+#root{
+  padding-top: 65px;
+  background-color: #252a3a;
+  min-height: 100vh;
+  font-size: 1.5em;
+  color: #f8f8ff;
+}
+a {
+  color: #E38C24;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+button {
+  background: #87ceeb;
+  border: none;
+  border-radius: 10px;
+  padding:5px 15px;
+  font-size: .8em;
+  color: #f8f8ff;
+  transition: transform .3s;
+}
+button:hover {
+  background: #6facc4;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* --navbar-- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: darkslateblue; */
+  background-image: url('../../public/purple_galaxy.jpg');
+  position: fixed;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  width:100%;
+  top: 0;
+}
+.navbar-center > a {
+  margin: 0 10px;
+}
+
+/* --sign-modal-- */
+.sign-modal-background {
+  position: fixed;
+  height:100vh;
+  width: 100vw;
+  background: black;
+  opacity: .2;
+  z-index:1;
+}
+.sign-modal {
+  position: fixed;
+  background: rgb(80, 80, 80);
+  border-radius: 10px;
+  padding: 20px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  z-index:2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.sign-modal-btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* --posts--*/
+.post-container {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-top: 10px; */
+}
+.post-card {
+  background: #3b3277;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 700px;
+}
+.post-card > h1 {
+  color: #E38C24;
+}
+.post-card-date {
+  font-size: .5em;
+  margin-top:20px;
+  color: #87ceeb;
+}
