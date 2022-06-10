@@ -14,7 +14,21 @@ export default function SignModal(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(username, password);
+    const init = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password, type: e.target.dataset.type }),
+    };
+    fetch("http://localhost:5000/users", init)
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data.message) {
+          console.log(data);
+        } else {
+          props.setCurrentUser(data);
+          props.setSignModal(false);
+        }
+      });
   }
 
   return (
@@ -26,7 +40,7 @@ export default function SignModal(props) {
       <div className="sign-modal">
         <div>Sign Up or Sign In</div>
         <br />
-        <form onSubmit={handleSubmit}>
+        <form>
           <label>
             Username:{" "}
             <input type="text" value={username} onChange={handleChange} />
@@ -39,8 +53,12 @@ export default function SignModal(props) {
           <br />
           <br />
           <div className="sign-modal-btn-container">
-            <button>Sign Up</button>
-            <button>Sign In</button>
+            <button data-type="signup" onClick={handleSubmit}>
+              Sign Up
+            </button>
+            <button data-type="login" onClick={handleSubmit}>
+              Sign In
+            </button>
           </div>
         </form>
       </div>

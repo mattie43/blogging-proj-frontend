@@ -1,17 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
-export default function Posts() {
-  const [allPosts, setAllPosts] = useState(null);
-
+export default function Posts(props) {
   useEffect(() => {
     fetch("http://localhost:5000/posts")
       .then((resp) => resp.json())
-      .then((data) => setAllPosts(data));
-  }, []);
+      .then((data) => props.setAllPosts(data))
+      .catch((err) => console.log(err));
+  }, [props]);
 
   function displayPosts() {
-    return allPosts.map((post) => {
-      const d = Date(post.date).toString().substring(0, 16);
+    return props.allPosts.map((post) => {
+      const d = new Date(parseInt(post.date)).toString().substring(0, 21);
       return (
         <div className="post-card" key={post._id}>
           <h1>{post.title}</h1>
@@ -21,5 +20,7 @@ export default function Posts() {
       );
     });
   }
-  return <div className="post-container">{allPosts && displayPosts()}</div>;
+  return (
+    <div className="post-container">{props.allPosts && displayPosts()}</div>
+  );
 }

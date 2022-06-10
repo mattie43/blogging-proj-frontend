@@ -15,9 +15,13 @@ export default function Navbar(props) {
         <Link to="/posts">Posts</Link>
       </div>
       <div className="navbar-right">
-        {!props.currentUser && (
-          <button type="sign-in" onClick={() => props.setSignModal(true)}>
+        {!props.currentUser ? (
+          <button onClick={() => props.setSignModal(true)}>
             Start Blogging
+          </button>
+        ) : (
+          <button onClick={() => props.setNewPostModal(true)}>
+            Write New Blog
           </button>
         )}
       </div>

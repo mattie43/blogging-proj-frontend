@@ -6,7 +6,7 @@ body, html {
 #root{
   padding-top: 65px;
   background-color: #252a3a;
-  min-height: 100vh;
+  min-height: calc(100vh - 65px);
   font-size: 1.5em;
   color: #f8f8ff;
 }
@@ -37,7 +37,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: darkslateblue; */
   background-image: url('../../public/purple_galaxy.jpg');
   position: fixed;
   padding: 10px 20px;
@@ -46,7 +45,7 @@ button:hover {
   top: 0;
 }
 .navbar-center > a {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 /* --sign-modal-- */
@@ -80,18 +79,18 @@ button:hover {
 .post-container {
   display:flex;
   flex-direction: column;
-  align-items: center;
-  /* padding-top: 10px; */
+  max-width: 700px;
+  margin:auto;
 }
 .post-card {
   background: #3b3277;
   margin: 10px 20px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
-  max-width: 700px;
 }
 .post-card > h1 {
   color: #E38C24;
+  margin: 0;
 }
 .post-card-date {
   font-size: .5em;
