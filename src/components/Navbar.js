@@ -11,8 +11,22 @@ export default function Navbar(props) {
         height={45}
       />
       <div className="navbar-center">
-        <Link to="/">Home</Link>
-        <Link to="/posts">Posts</Link>
+        <Link
+          to="/"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          Home
+        </Link>
+        <Link
+          to="/posts"
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
+          Posts
+        </Link>
       </div>
       <div className="navbar-right">
         {!props.currentUser ? (

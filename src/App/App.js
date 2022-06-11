@@ -18,6 +18,11 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Navbar
+        currentUser={currentUser}
+        setSignModal={setSignModal}
+        setNewPostModal={setNewPostModal}
+      />
       {signModal && (
         <SignModal
           setCurrentUser={setCurrentUser}
@@ -32,11 +37,6 @@ function App() {
           setAllPosts={setAllPosts}
         />
       )}
-      <Navbar
-        currentUser={currentUser}
-        setSignModal={setSignModal}
-        setNewPostModal={setNewPostModal}
-      />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route

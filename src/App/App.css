@@ -1,35 +1,46 @@
 /* --global-- */
+:root {
+  --red: #BC382E;
+  --orange: #FF8000;
+  --green: #388D80;
+  --grey: #577783;
+  --blue: #4583AA;
+  --sky-blue: #7ebfda;
+  --dark-grey: #1D2B34;
+  --white: #f8f8ff;
+}
 body, html {
   margin: 0;
   padding:0;
 }
 #root{
   padding-top: 65px;
-  background-color: #252a3a;
+  background-color: var(--dark-grey);
   min-height: calc(100vh - 65px);
   font-size: 1.5em;
-  color: #f8f8ff;
+  color: var(--white);
 }
 a {
-  color: #E38C24;
+  color: var(--white);
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 button {
-  background: #87ceeb;
+  color: var(--white);
+  background: var(--sky-blue);
   border: none;
   border-radius: 10px;
   padding:5px 15px;
-  font-size: .8em;
-  color: #f8f8ff;
-  transition: transform .3s;
+  font-size: .9em;
+  font-weight: bold;
+  transition: transform .3s, background .3s, color .3s;
 }
 button:hover {
-  background: #6facc4;
   cursor: pointer;
   transform: scale(1.1);
+  background: var(--blue);
 }
 
 /* --navbar-- */
@@ -37,7 +48,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url('../../public/purple_galaxy.jpg');
+  background: var(--grey);
   position: fixed;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -59,7 +70,7 @@ button:hover {
 }
 .sign-modal {
   position: fixed;
-  background: rgb(80, 80, 80);
+  background: var(--dark-grey);
   border-radius: 10px;
   padding: 20px;
   top:50%;
@@ -75,25 +86,47 @@ button:hover {
   justify-content: space-around;
 }
 
+/* --home-- */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #BC382E;
+}
+.home-panel {
+  width:100%;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.panel-2 {
+  background: #FF8000;
+}
+.panel-3 {
+  background: #388D80;
+}
+
 /* --posts--*/
 .post-container {
   display:flex;
   flex-direction: column;
   max-width: 700px;
   margin:auto;
+  padding: 10px 0;
 }
 .post-card {
-  background: #3b3277;
   margin: 10px 20px;
   padding: 15px;
   border-radius: 10px;
 }
 .post-card > h1 {
-  color: #E38C24;
   margin: 0;
 }
 .post-card-date {
   font-size: .5em;
   margin-top:20px;
-  color: #87ceeb;
 }
