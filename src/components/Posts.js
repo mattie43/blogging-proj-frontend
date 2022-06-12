@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import avatar from "../images/avatar.svg";
 
 export default function Posts(props) {
   const backgroundColors = ["#BC382E", "#FF8000", "#388D80", "#4583AA"];
@@ -23,7 +24,13 @@ export default function Posts(props) {
         >
           <h1>{post.title}</h1>
           <p className="post-card-body">{post.body}</p>
-          <div className="post-card-date">{d}</div>
+          <div className="card-footer">
+            <div className="avatar-container">
+              <img src={avatar} alt="Avatar" />
+              <div>{post.user.username}</div>
+            </div>
+            <div>{d}</div>
+          </div>
         </div>
       );
     });

@@ -126,7 +126,16 @@ button:hover {
 .post-card > h1 {
   margin: 0;
 }
-.post-card-date {
-  font-size: .5em;
-  margin-top:20px;
+.card-footer {
+  font-size: .7em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+.avatar-container > img {
+  margin-right: 10px;
 }
